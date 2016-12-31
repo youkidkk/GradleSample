@@ -1,0 +1,26 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.h2database:h2:1.4.193'
+        classpath 'org.flywaydb:flyway-gradle-plugin:3.2.1'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'org.flywaydb.flyway'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.13' // init時のもの
+    testCompile 'junit:junit:4.12' // init時のもの
+}
+
+flyway {
+    user = 'sa'
+    url = 'jdbc:h2:tcp://localhost/FlywaySample'
+}
