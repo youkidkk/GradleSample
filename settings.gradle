@@ -1,0 +1,3 @@
+include 'FlywaySample'
+include 'GradleSample'
+include 'JaCoCoSample'
